@@ -1,0 +1,108 @@
+/* Home1.css */
+
+/* General page styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: #222;
+}
+
+/* Hero Section */
+.hero-container {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  background: rgba(223, 242, 194, 0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5A7A4A;
+}
+
+.hero-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-container .btn {
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.hero-container .btn:hover {
+  background-color: #496635;
+  transform: translateY(-3px);
+}
+
+/* Cards */
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Market Overview */
+.market-overview h2,
+.features h2,
+.news h2 {
+  font-weight: 700;
+  color: #5A7A4A;
+  margin-bottom: 2rem;
+}
+
+/* Features Section */
+.features .col-md-4 {
+  padding: 1.5rem 1rem;
+}
+
+.features .col-md-4 h5 {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #5A7A4A;
+}
+
+.features .col-md-4 p {
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* Latest News */
+.news ul li {
+  padding: 0.8rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.news ul li:hover {
+  transform: translateX(5px);
+  background: #f2f8e5;
+}
+
+/* Images */
+.hero-container img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container h1 {
+    font-size: 2rem;
+  }
+  .hero-container p {
+    font-size: 1rem;
+  }
+}

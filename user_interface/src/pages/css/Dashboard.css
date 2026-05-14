@@ -1,0 +1,72 @@
+.dashboard-container {
+  background-color: #dff2c2;
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profit-loss {
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: blink 1s infinite alternate;
+}
+
+.profit {
+  color: green;
+}
+.loss {
+  color: red;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.heatmap-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.heatmap-block {
+  flex: 1 1 calc(33% - 10px);
+  padding: 15px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.heatmap-block:hover {
+  transform: scale(1.05);
+}
+
+.gain {
+  background-color: #4caf50;
+}
+.loss {
+  background-color: #f44336;
+}
+
+.quick-link-card {
+  background-color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-5px);
+}
+
+.quick-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,74 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(223, 242, 194, 0.5);
+}
+
+.login-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  /* backdrop-filter: blur(12px); */
+}
+
+/* Left Section */
+.login-left {
+  flex: 1;
+  background-color: #DFF2C2;
+  color: #5A7A4A;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app-logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.floating {
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Right Section */
+.login-right {
+  flex: 1;
+  background: white;
+  padding: 40px;
+}
+
+/* Forgot Password link */
+.forgot-link {
+  font-size: 0.9rem;
+  color: #5A7A4A;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.forgot-link:hover {
+  color: #3b5532;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-left, .login-right {
+    flex: 100%;
+    text-align: center;
+  }
+}

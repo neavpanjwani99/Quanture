@@ -1,0 +1,31 @@
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  color: gray;
+}
+
+.step.active {
+  color: green;
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    gray,
+    gray 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  margin: 0 10px;
+}

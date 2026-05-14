@@ -1,0 +1,11 @@
+.gcn-link {
+  transition: transform 0.2s ease, color 0.2s ease; /* smooth animation */
+  text-decoration: none;
+}
+
+.gcn-link:hover {
+  transform: translateY(-4px); /* moves link 4px up */
+  color: #1a73e8; /* optional: change color on hover */
+}
+
+
