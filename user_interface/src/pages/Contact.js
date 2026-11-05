@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Card, Toast, ToastContainer } from "react-bootstrap";
 import { motion } from "framer-motion";
 import logo from "../assets/images/logo1.png";
+import { API_BASE_URL } from "../config/api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -53,7 +54,7 @@ export default function Contact() {
     }
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/contact`, {
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

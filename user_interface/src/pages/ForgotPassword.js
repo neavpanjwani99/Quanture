@@ -4,6 +4,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./css/login.css";
 import logo from "../assets/images/logo1.png";
+import { API_BASE_URL } from "../config/api";
 
 function ForgotPassword() {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ function ForgotPassword() {
     }
     setErrors({});
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/forgot-password`, {
+      const res = await axios.post(`${API_BASE_URL}/api/auth/forgot-password`, {
         email: formData.emailOrUid,
       });
       console.log("OTP sent:", res.data);
@@ -79,7 +80,7 @@ function ForgotPassword() {
     }
     setErrors({});
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/reset-password`, {
+      const res = await axios.post(`${API_BASE_URL}/api/auth/reset-password`, {
         email: formData.emailOrUid,
         otp: formData.otp,
         password: formData.newPassword,

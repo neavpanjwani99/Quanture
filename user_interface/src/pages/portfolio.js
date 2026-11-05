@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaArrowUp, FaArrowDown, FaMinus, FaEnvelope } from "react-icons/fa";
 import logo from "../assets/images/logo1.png";
+import { API_BASE_URL } from "../config/api";
 
 export default function Portfolio() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function Portfolio() {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("Please login to view your portfolio.");
 
-        const { data } = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades/portfolio`, {
+        const { data } = await axios.get(`${API_BASE_URL}/api/trades/portfolio`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -89,7 +90,7 @@ export default function Portfolio() {
       const token = localStorage.getItem("token");
       if (token) {
         await axios.post(
-          `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades/portfolio/email`,
+          `${API_BASE_URL}/api/trades/portfolio/email`,
           {},
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -97,7 +98,7 @@ export default function Portfolio() {
         setShowEmailModal(false);
       } else if (emailAddress) {
         await axios.post(
-          `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades/portfolio/email`,
+          `${API_BASE_URL}/api/trades/portfolio/email`,
           { email: emailAddress }
         );
         alert("Portfolio emailed successfully!");

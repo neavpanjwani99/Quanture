@@ -13,6 +13,7 @@ import {
   ToastContainer,
 } from "react-bootstrap";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { API_BASE_URL } from "../config/api";
 import { Pie } from "react-chartjs-2";
 import axios from "axios";
 import logo from "../assets/images/logo1.png";
@@ -28,7 +29,7 @@ const initialStocks = [
   { symbol: "TSLA", name: "Tesla Inc.", price: 720.33, eps: 4 },
 ];
 
-const API_URL = `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/watchlist`;
+const API_URL = `${API_BASE_URL}/api/watchlist`;
 
 export default function Watchlist() {
   const [stocks, setStocks] = useState(initialStocks);

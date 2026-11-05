@@ -9,6 +9,7 @@ import axios from "axios";
 import logo from "../assets/images/logo1.png";
 import { saveAs } from 'file-saver';
 import Papa from 'papaparse';
+import { API_BASE_URL } from "../config/api";
 
 export default function Transactions() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function Transactions() {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("You must be logged in to view transactions.");
 
-        const { data: trades } = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades`, {
+        const { data: trades } = await axios.get(`${API_BASE_URL}/api/trades`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -93,7 +94,7 @@ export default function Transactions() {
       if (!token) throw new Error("Please login to send email");
 
       await axios.post(
-        `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades/email-transactions`,
+        `${API_BASE_URL}/api/trades/email-transactions`,
         { transactions: filteredTransactions, email: emailAddress },
         { headers: { Authorization: `Bearer ${token}` } }
       );

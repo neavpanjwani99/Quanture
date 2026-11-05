@@ -8,6 +8,7 @@ import logo from "../assets/images/logo1.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { API_BASE_URL } from "../config/api";
 
 function StepForm() {
   const navigate = useNavigate();
@@ -150,7 +151,7 @@ function StepForm() {
     try {
       const payload = { ...formData };
 
-      await axios.post(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/details`, payload, {
+      await axios.post(`${API_BASE_URL}/api/auth/details`, payload, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

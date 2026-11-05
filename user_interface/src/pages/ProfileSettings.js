@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../assets/images/logo1.png";
+import { API_BASE_URL } from "../config/api";
 
 export default function ProfileSettings() {
   const [name, setName] = useState("");
@@ -61,7 +62,7 @@ export default function ProfileSettings() {
           return;
         }
 
-        const res = await fetch(`${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/auth/profile`, {
+        const res = await fetch(`${API_BASE_URL}/api/auth/profile`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

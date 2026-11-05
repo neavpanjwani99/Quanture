@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap";
 import "animate.css";
 import axios from "axios";
+import { API_BASE_URL } from "../config/api";
 
 // Chart.js
 import { Line } from "react-chartjs-2";
@@ -425,7 +426,7 @@ const MarketShowcase = () => {
                 const token = localStorage.getItem("token"); // <-- ensure login saves token
 
                 await axios.post(
-                  `${process.env.REACT_APP_API_URL || "http://localhost:5000"}/api/trades`,
+                  `${API_BASE_URL}/api/trades`,
                   {
                     stockName: tradeStock.name,      // matches backend
                     tradeType,                       // "Buy" or "Sell"
